@@ -18,10 +18,6 @@ function newFlight(req, res) {
 }
 
 function create(req, res) {
-    let flightNo = req.body.flightNo
-    if (flightNo <= 10 && flightNo >= 9999) {
-        flightNo === true
-    }
     const flight = new Flight(req.body)
     flight.save(function(err) {
         if(err) {
