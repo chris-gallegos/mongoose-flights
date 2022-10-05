@@ -62,5 +62,29 @@
   <% } else { %>
     <h5>No Destinations Yet</h5>
   <% } %>
+  <a href="/flights/<%= flight._id %>/tickets/new">Add Ticket</a>
+
+  <% if(tickets.length) { %>
+    <table>
+      <thead>
+        <tr>
+          <th>Seat</th>
+          <th>Price</th>
+          <th>Flight</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% tickets.forEach(function(t) { %>
+          <tr>
+            <td><%= t.seat %></td>
+            <td><%= t.price %></td>
+            <td><%= t.flight %></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+  <% } else { %>
+    <h5>No Tickets Yet</h5>
+  <% } %>
 </body>
 </html>
